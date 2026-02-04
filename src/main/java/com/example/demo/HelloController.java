@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,14 @@ public class HelloController {
     public HelloResponse helloPost(@RequestBody HelloRequest request) {
         return new HelloResponse(
                 "Hello " + request.getName() + " from Spring Boot API!",
+                "SUCCESS"
+        );
+    }
+
+    @PutMapping("/")
+    public HelloResponse helloPut(@RequestBody HelloRequest request) {
+        return new HelloResponse(
+                "Hello " + request.getName() + " from Spring Boot API! (Updated)",
                 "SUCCESS"
         );
     }
