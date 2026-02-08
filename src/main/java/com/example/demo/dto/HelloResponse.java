@@ -12,6 +12,8 @@ public class HelloResponse {
 
     public String getMessage() {
         return message;
+
+        }
     }
 
     public String getStatus() {
