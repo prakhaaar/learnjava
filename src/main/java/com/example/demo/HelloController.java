@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -35,4 +36,12 @@ public class HelloController {
                 "SUCCESS"
         );
     }
+   @DeleteMapping("/")
+public HelloResponse helloDelete(@RequestBody HelloRequest request) {
+    return new HelloResponse(
+            "Goodbye " + request.getName() + " from Spring Boot API! (Deleted)",
+            "SUCCESS"
+    );
+}
+
 }
